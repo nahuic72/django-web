@@ -1,0 +1,13 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: latest
+  build:
+    commands:
+      - echo "Running security checks"
+      - pip install bandit
+      - bandit -r ./src
+artifacts:
+  files:
+    - '**/*'
